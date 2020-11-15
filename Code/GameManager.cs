@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
     public float restartDelay = 2f;
+    public GameObject completeLevelUI;
+  
     public void EndGame()
     {
         if (gameHasEnded == false)
@@ -14,6 +16,10 @@ public class GameManager : MonoBehaviour
             Invoke("Restart", restartDelay);
         }
     
+    }
+    public void CompleteLevel()
+    {
+        completeLevelUI.SetActive(true);
     }
     void Restart()
     {
